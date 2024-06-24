@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*body background color*/
+body{
+    background: linear-gradient(to right, rgb(80,31,5), rgb(156,73,13), rgb(220,135,11));
+}
+/* @media (min-width: 1200px) and (max-width: 1890px){
+    .banner_container{
+        margin-top:0px !important;
+        min-height:27rem;
+    } 
+} */
+.banner_container{
+    min-height:27rem;
+} 
+.banner_image{
+    border-radius: 10px 100px / 120px;
+}
+/*input box css*/
+form input{
+    background-color:rgb(220,135,11) !important;
+    color:white;
+    padding:0.5rem;
+    border-radius: 0.5rem;
+    width:20rem;
+}
+form input::placeholder{
+    background-color:rgb(220,135,11);
+    color: white;
+}
+/**sign up**/
+.signupright_container{
+    min-height:45rem;
+}
