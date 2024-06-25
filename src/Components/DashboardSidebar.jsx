@@ -29,7 +29,7 @@ const DashboardSidebar = () => {
         <Sidebar.ItemGroup className="flex flex-col gap-2">
           {currentuser.rest.isAdmin ? (
             <>
-              <Link to="/dashboard?createcourse">
+              <Link to="/dashboard?tab=createcourse">
                 <Sidebar.Item
                   active={tab === "createcourse"}
                   labelColor="dark"
@@ -56,19 +56,19 @@ const DashboardSidebar = () => {
                   View Students
                 </Sidebar.Item>
               </Link>
-              <Link>
+              <Link to="/dashboard?tab=learnersdetails">
                 <Sidebar.Item
-                  active={tab === "assignmentor"}
+                  active={tab === "learnersdetails"}
                   labelColor="dark"
                   as="div"
                 >
-                 Assign mentor
+                 Learner's Details
                 </Sidebar.Item>
               </Link>
             </>
           ) : (
             <>
-              <Link>
+              <Link to="/dashboard?tab=mycourses">
                 <Sidebar.Item
                   active={tab === "mycourses"}
                   labelColor="dark"
@@ -77,7 +77,7 @@ const DashboardSidebar = () => {
                   My Courses
                 </Sidebar.Item>
               </Link>
-              <Link>
+              <Link to="/dashboard?tab=myperformance">
                 <Sidebar.Item
                   active={tab === "myperformance"}
                   labelColor="dark"
@@ -86,7 +86,7 @@ const DashboardSidebar = () => {
                   My Performance
                 </Sidebar.Item>
               </Link>
-              <Link>
+              {/* <Link to="/dashboard?tab=assignments">
                 <Sidebar.Item
                   active={tab === "assignments"}
                   labelColor="dark"
@@ -94,7 +94,7 @@ const DashboardSidebar = () => {
                 >
                   My Assignments
                 </Sidebar.Item>
-              </Link>
+              </Link >
               <Link to="/dashboard?tab=quiz">
                 <Sidebar.Item
                   active={tab === "quiz"}
@@ -103,9 +103,9 @@ const DashboardSidebar = () => {
                 >
                   Quiz
                 </Sidebar.Item>
-              </Link>
+              </Link> */}
 
-              <Link>
+              <Link to="/dashboard?tab=query">
                 <Sidebar.Item
                   active={tab === "query"}
                   labelColor="dark"

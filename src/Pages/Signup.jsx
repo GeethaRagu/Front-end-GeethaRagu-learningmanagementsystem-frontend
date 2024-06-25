@@ -11,14 +11,13 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import OAuth from "../Components/OAuth";
 
-
 const Signup = () => {
   /**React Hooks */
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   /**State for loading **/
-  const { loading} = useSelector((state) => state.user);
+  const { loading } = useSelector((state) => state.user);
 
   const initialValues = {
     username: "",
@@ -49,7 +48,7 @@ const Signup = () => {
   //Call signup API on form submit
   const apiurl = import.meta.env.VITE_API_URLKEY;
   const handleSubmit = async (values) => {
-    console.log(values);
+    // console.log(values);
     try {
       dispatch(signUpStart());
       const response = await fetch(`${apiurl}/auth/signup`, {
@@ -60,7 +59,7 @@ const Signup = () => {
         body: JSON.stringify(values),
       });
       const data = await response.json();
-      console.log(data);
+      //console.log(data);
       if (data.success === false) {
         return dispatch(signUpFailure(data.message));
       }
@@ -190,7 +189,7 @@ const Signup = () => {
                     "Sign Up"
                   )}
                 </Button>
-                <OAuth/>
+                <OAuth />
               </div>
             </Form>
           </Formik>
@@ -200,7 +199,6 @@ const Signup = () => {
               Sign In
             </Link>
           </div>
-          
         </div>
         <div className=" flex-1 pt-5 px-10 py-5 bg-amber-950  text-white border-amber-950 rounded-2xl signupright_container">
           Sign up with your Username, Email and Password and address.

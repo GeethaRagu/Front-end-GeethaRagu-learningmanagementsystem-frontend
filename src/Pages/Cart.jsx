@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { ImCross } from "react-icons/im";
 import { removeFromCart } from "../Redux/Slice/cartSlice";
-
+import { saveuser } from "../Redux/Slice/userSlice";
 
 const Cart = () => {
   /**React hooks**/
@@ -40,43 +40,38 @@ const Cart = () => {
       const itemid = e._id;
       // console.log(itemid);
       //console.log(currentuser.rest.courses.length);
-      
+
       const coursesofuser = currentuser.rest.courses;
-      if(currentuser.rest.courses.length>0){
-      coursesofuser.forEach((ele) => {
-        console.log(ele);
-        if (ele !== itemid) {
-          itemarray.push(itemid);
-          
-        } 
-      });
-    }
-    else{
-      itemarray.push(itemid);
-    }
+      if (currentuser.rest.courses.length > 0) {
+        coursesofuser.forEach((ele) => {
+          //console.log(ele);
+          if (ele !== itemid) {
+            itemarray.push(itemid);
+          }
+        });
+      } else {
+        itemarray.push(itemid);
+      }
     });
     //console.log(itemarray);
     const bodydata = {
       userId: currentuser.rest._id,
       courses: itemarray,
     };
-    console.log(bodydata);
+    //console.log(bodydata);
 
     try {
-      const response = await fetch(
-        `${apiurl}/course/addcourse`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(bodydata),
-        }
-      );
+      const response = await fetch(`${apiurl}/course/addcourse`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bodydata),
+      });
       const data = await response.json();
-      console.log(data);
+      //console.log(data);
       if (response.ok) {
-       
+        dispatch(saveuser(data));
         toast(data.message);
       }
     } catch (error) {}

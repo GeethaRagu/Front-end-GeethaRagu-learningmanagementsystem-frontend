@@ -6,6 +6,7 @@ const initialState = {
     currentuser: null,
     error: null,
     loading: false,
+    students:null
   };  // default state
 const userSlice = createSlice({
     name: "user",
@@ -47,9 +48,15 @@ const userSlice = createSlice({
             state.currentuser = null;
             state.loading = false;
             state.error = null;
+          },
+          viewStudents:(state,action)=>{
+            state.students = action.payload;
+          },
+          saveuser:(state,action)=>{
+            state.currentuser = action.payload;
           }
     }
 })
-export const{signUpStart,signUpSuccess,signUpFailure,signInStart,signInSuccess,signInFailure,signOutSuccess} = userSlice.actions;
+export const{signUpStart,signUpSuccess,signUpFailure,signInStart,signInSuccess,signInFailure,signOutSuccess,viewStudents,saveuser} = userSlice.actions;
 
 export default userSlice.reducer;

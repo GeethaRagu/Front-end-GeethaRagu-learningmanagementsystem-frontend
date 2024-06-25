@@ -1,6 +1,6 @@
-import { Button, Spinner } from "flowbite-react";
+import { Button, Card, Spinner } from "flowbite-react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import OAuth from "../Components/OAuth";
 import {
@@ -10,6 +10,9 @@ import {
 } from "../Redux/Slice/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
+import Courses from "./Courses";
+import axios from "axios";
+import { displayCourse } from "../Redux/Slice/courseSlice";
 
 const Home = () => {
   /**React Hooks */
@@ -19,6 +22,12 @@ const Home = () => {
   /**State for loading **/
   const { loading } = useSelector((state) => state.user);
   const { totalItems } = useSelector((state) => state.cart);
+  const course = useSelector((state) => state.course.courses);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const initialValues = {
     email: "",
     password: "",
@@ -32,7 +41,7 @@ const Home = () => {
   //Call signup API on form submit
   const apiurl = import.meta.env.VITE_API_URLKEY;
   const handleSubmit = async (values) => {
-    console.log(values);
+    //console.log(values);
     try {
       dispatch(signInStart());
       const response = await fetch(`${apiurl}/auth/signin`, {
@@ -43,27 +52,36 @@ const Home = () => {
         body: JSON.stringify(values),
       });
       const data = await response.json();
-      console.log(data);
+      //console.log(data);
       if (data.success === false) {
         return dispatch(signInFailure(data.message));
       }
       if (response.ok) {
-        localStorage.setItem('Token',data.token);
+        localStorage.setItem("Token", data.token);
         dispatch(signInSuccess(data));
-        if(totalItems>0){
-          navigate('/cart');
-        }
-        else{
+        if (totalItems > 0) {
+          navigate("/cart");
+        } else {
           navigate("/");
         }
-        
       }
     } catch (error) {
       dispatch(signInFailure(error.message));
     }
   };
+
+  const fetchData = async () => {
+    await axios
+      .get(`${apiurl}/course/getcourses`)
+      .then((res) => {
+        dispatch(displayCourse(res.data));
+        //console.log("res", res.data);
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mb-5">
       <div className="pt-5 px-5 flex max-w-full flex-col md:flex-row md:items-center gap-5">
         <div className=" flex flex-row px-10 py-5 bg-amber-950  text-white border-amber-950 rounded-2xl banner_container">
           <div>
@@ -146,7 +164,30 @@ const Home = () => {
           </div>
         </div>
       </div>
-      
+      <h3 className=" text-4xl text-center font-medium tracking-tight text-white dark:text-white m-6">
+        LATEST COURSES
+      </h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ml-5">
+        {course &&
+          course.map((ele, index) => {
+            return (
+              <Card key={index} className="max-w-sm">
+                <h5 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                  {ele.coursename} [{ele.coursecategory}]
+                </h5>
+                <h6 className=" text-xl font-medium tracking-tight text-gray-900 dark:text-white">
+                  {ele.coursedescription}
+                </h6>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-3xl font-bold text-gray-900 dark:text-white">
+                    ₹{ele.courseprice}
+                  </span>
+                </div>
+              </Card>
+            );
+          })}
+      </div>
     </div>
   );
 };

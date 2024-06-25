@@ -29,12 +29,12 @@ const cartSlice = createSlice({
       localStorage.setItem("totalItems", JSON.stringify(state.totalItems));
     },
     removeFromCart: (state, action) => {
-      const {item} = action.payload;
+      const { item } = action.payload;
       //console.log(item);
       const id = item._id;
       //console.log(id);
       const price = parseInt(item.courseprice);
-      
+
       const removeItem = state.cartItems.filter((item) => item._id !== id);
       state.cartItems = removeItem;
       state.totalItems--;

@@ -15,12 +15,12 @@ import { signOutSuccess } from "../Redux/Slice/userSlice";
 
 const Header = () => {
   /** State for loading and current user from userslice**/
-  const { currentuser } = useSelector((state) => state.user);
-  const theme = useSelector((state) => state.theme);
+  const currentuser = useSelector((state) => state.user.currentuser);
+  const theme = useSelector((state) => state.theme.theme);
 
   /**State for cart count**/
   const totalItems = useSelector((state) => state.cart.totalItems);
-  //console.log(totalItems);
+
 
   /**React hooks**/
   const dispatch = useDispatch();
@@ -50,9 +50,13 @@ const Header = () => {
             className="w-12 h-10 mr-2 hidden sm:inline bg-gradient-to-r from-amber-950 via-amber-800 to bg-amber-500"
             onClick={() => dispatch(toggleTheme())}
           >
-            {/* {theme === 'light' ? <FaMoon /> : <FaSun />} */}
-            {theme == "dark" ? <FaSun /> : <FaMoon />}
+             {theme === "light" ? (
+            <FaMoon />
+          ) :(
+            <FaSun />
+          )}
           </Button>
+        
           <Button className="w-20 h-10 mr-2 hidden sm:inline bg-gradient-to-r from-amber-950 via-amber-800 to bg-amber-500 bordered text-white">
             <Link to="/cart">
               Cart
@@ -61,7 +65,7 @@ const Header = () => {
               </span>
             </Link>
           </Button>
-
+          
           {currentuser ? (
             <Dropdown
               arrowIcon={false}
@@ -105,17 +109,17 @@ const Header = () => {
           <Navbar.Toggle />
         </div>
         <Navbar.Collapse>
-          <Navbar.Link active as={"div"}>
+          <Navbar.Link as={"div"}>
             <Link to="/courses">Courses</Link>
           </Navbar.Link>
-          <Navbar.Link active as={"div"}>
+          <Navbar.Link  as={"div"}>
             <Link to="/mentors">Mentors</Link>
           </Navbar.Link>
-          <Navbar.Link href="#" as={"div"}>
-            Reviews
+          <Navbar.Link as={"div"}>
+          <Link to="/review">Reviews</Link>
           </Navbar.Link>
-          <Navbar.Link href="#" as={"div"}>
-            FAQ
+          <Navbar.Link as={"div"}>
+          <Link to="/faq">FAQ</Link>
           </Navbar.Link>
         </Navbar.Collapse>
       </Navbar>

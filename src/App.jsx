@@ -1,6 +1,5 @@
 import React  from "react";
 import Header from "./Components/Header";
-import Footer from "./Components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import Courses from "./Pages/Courses";
@@ -10,6 +9,9 @@ import { ToastContainer } from "react-toastify";
 import Cart from "./Pages/Cart";
 import PrivateRoute from "./Components/PrivateRoute";
 import Dashboard from "./Pages/Dashboard";
+import FooterArea from "./Components/FooterArea";
+import Frequentlyasked from "./Pages/Frequentlyasked";
+import Reviews from "./Pages/Reviews";
 
 
 const App = () => {
@@ -30,8 +32,10 @@ const App = () => {
             <Route element={<PrivateRoute />}>
               <Route path="/dashboard" element={<Dashboard />} />
             </Route>
+            <Route path="/faq" element={<Frequentlyasked/>}></Route>
+            <Route path="/review" element={<Reviews/>}></Route>
           </Routes>
-          <Footer />
+          <FooterArea />
         </BrowserRouter>
       </div>
     </div>
