@@ -60,7 +60,7 @@ const CreateCourse = () => {
             <Form>
               <div className="mt-5">
                 <label className="pr-12">Course name :</label>
-                <Field type="text" name="coursename" />
+                <Field type="text" name="coursename" className="w-40 sm:w-full"/>
                 <ErrorMessage
                   name="coursename"
                   component="h6"
@@ -69,7 +69,7 @@ const CreateCourse = () => {
               </div>
               <div className="mt-5">
                 <label className="pr-6">Course Category :</label>
-                <Field type="text" name="coursecategory" />
+                <Field type="text" name="coursecategory" className="w-40 sm:w-full"/>
                 <ErrorMessage
                   name="coursecategory"
                   component="h6"
@@ -78,7 +78,7 @@ const CreateCourse = () => {
               </div>
               <div className="mt-5">
                 <label className="pr-2">Course Description :</label>
-                <Field type="text" name="coursedescription" />
+                <Field type="text" name="coursedescription" className="w-40 sm:w-full"/>
                 <ErrorMessage
                   name="coursedescription"
                   component="h6"
@@ -87,7 +87,7 @@ const CreateCourse = () => {
               </div>
               <div className="mt-5">
                 <label className="pr-14">Course price :</label>
-                <Field type="text" name="courseprice" />
+                <Field type="text" name="courseprice" className="w-40 sm:w-full"/>
                 <ErrorMessage
                   name="courseprice"
                   component="h6"

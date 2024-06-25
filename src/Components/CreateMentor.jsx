@@ -58,7 +58,7 @@ const CreateMentor = () => {
               <Form>
                 <div className="mt-5">
                   <label className="pr-6">Mentor name :</label>
-                  <Field type="text" name="mentorName" />
+                  <Field type="text" name="mentorName" className="w-40 sm:w-full"/>
                   <ErrorMessage
                     name="mentorName"
                     component="h6"
@@ -67,7 +67,7 @@ const CreateMentor = () => {
                 </div>
                 <div className="mt-5">
                   <label className="pr-6">Mentor Email :</label>
-                  <Field type="email" name="mentorEmail" />
+                  <Field type="email" name="mentorEmail" className="w-40 sm:w-full"/>
                   <ErrorMessage
                     name="mentorEmail"
                     component="h6"

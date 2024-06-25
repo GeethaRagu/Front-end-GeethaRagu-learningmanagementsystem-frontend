@@ -84,7 +84,7 @@ const Signup = () => {
             <Form>
               <div className="mt-5">
                 <label className="pr-2">Username :</label>
-                <Field type="text" name="username" placeholder="Your name" />
+                <Field type="text" name="username" placeholder="Your name" className="w-40 sm:w-full"/>
                 <ErrorMessage
                   name="username"
                   component="h6"
@@ -93,7 +93,7 @@ const Signup = () => {
               </div>
               <div className="mt-5">
                 <label className="pr-10">Email :</label>
-                <Field type="email" name="email" placeholder="name@gmail.com" />
+                <Field type="email" name="email" placeholder="name@gmail.com" className="w-40 sm:w-full"/>
                 <ErrorMessage
                   name="email"
                   component="h6"
@@ -102,7 +102,7 @@ const Signup = () => {
               </div>
               <div className="mt-5">
                 <label className="pr-3">Password :</label>
-                <Field type="password" name="password" placeholder="*******" />
+                <Field type="password" name="password" placeholder="*******" className="w-40 sm:w-full"/>
                 <ErrorMessage
                   name="password"
                   component="h6"
@@ -116,6 +116,7 @@ const Signup = () => {
                   type="text"
                   name="address.suite"
                   placeholder="Suite no"
+                  className="w-40 sm:w-full"
                 />
                 <ErrorMessage
                   name="address.suite"
@@ -129,6 +130,7 @@ const Signup = () => {
                   type="text"
                   name="address.street"
                   placeholder="Street name"
+                  className="w-40 sm:w-full"
                 />
                 <ErrorMessage
                   name="address.street"
@@ -142,6 +144,7 @@ const Signup = () => {
                   type="text"
                   name="address.city"
                   placeholder="City name"
+                  className="w-40 sm:w-full"
                 />
                 <ErrorMessage
                   name="address.city"
@@ -155,6 +158,7 @@ const Signup = () => {
                   type="text"
                   name="address.zipcode"
                   placeholder="Zipcode"
+                  className="w-40 sm:w-full"
                 />
                 <ErrorMessage
                   name="address.zipcode"
@@ -164,11 +168,12 @@ const Signup = () => {
               </div>
               <div className="mt-5">
                 <label className="pr-8">Phone :</label>
-                <Field type="text" name="phone" placeholder="Phone no" />
+                <Field type="text" name="phone" placeholder="Phone no" className="w-40 sm:w-full"/>
                 <ErrorMessage
                   name="phone"
                   component="h6"
                   className="error_message"
+
                 />
               </div>
               <div className="flex flex-row">

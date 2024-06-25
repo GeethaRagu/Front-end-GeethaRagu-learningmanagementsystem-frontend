@@ -24,7 +24,7 @@ form input{
     color:white;
     padding:0.5rem;
     border-radius: 0.5rem;
-    width:20rem;
+   
 }
 form input::placeholder{
     background-color:rgb(220,135,11);
@@ -32,5 +32,6 @@ form input::placeholder{
 }
 /**sign up**/
 .signupright_container{
-    min-height:45rem;
+    min-height:10rem;
+
 }

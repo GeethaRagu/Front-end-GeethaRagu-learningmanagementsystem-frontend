@@ -84,7 +84,7 @@ const LearnersDetails = () => {
             <Form>
               <div className="mt-5">
                 <label className="pr-2">Learners :</label>
-                <Field as="select" name="learner" className="text-black">
+                <Field as="select" name="learner" className="text-black w-40" >
                   {students &&
                     students.map((ele, index) => {
                       return (
@@ -108,7 +108,7 @@ const LearnersDetails = () => {
               </div>
               <div className="mt-5">
                 <label className="pr-2">Mentors :</label>
-                <Field as="select" name="mentor" className="text-black">
+                <Field as="select" name="mentor" className="text-black w-40">
                   {mentor &&
                     mentor.map((ele, index) => {
                       return (
@@ -126,7 +126,7 @@ const LearnersDetails = () => {
               </div>
               <div className="mt-5">
                 <label className="pr-2">Learner performance score:</label>
-                <Field type="text" name="performance" />
+                <Field type="text" name="performance" className="w-40"/>
                 <ErrorMessage
                   name="performance"
                   component="h6"
@@ -135,7 +135,7 @@ const LearnersDetails = () => {
               </div>
               <div className="mt-5">
                 <label className="pr-2">Learner assessment score :</label>
-                <Field type="text" name="assessment" />
+                <Field type="text" name="assessment" className="w-40"/>
                 <ErrorMessage
                   name="assessment"
                   component="h6"

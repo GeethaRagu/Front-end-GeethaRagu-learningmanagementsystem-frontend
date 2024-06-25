@@ -113,7 +113,7 @@ const Home = () => {
             <Form>
               <div className="mt-5">
                 <label className="pr-10">Email :</label>
-                <Field type="email" name="email" placeholder="name@gmail.com" />
+                <Field type="email" name="email" placeholder="name@gmail.com" className="w-40 sm:w-full"/>
                 <ErrorMessage
                   name="email"
                   component="h6"
@@ -122,7 +122,7 @@ const Home = () => {
               </div>
               <div className="mt-5">
                 <label className="pr-3">Password :</label>
-                <Field type="password" name="password" placeholder="*******" />
+                <Field type="password" name="password" placeholder="*******" className="w-40 sm:w-full"/>
                 <ErrorMessage
                   name="password"
                   component="h6"
