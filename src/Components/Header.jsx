@@ -105,16 +105,16 @@ const Header = () => {
             )}
           </div>
       
-            <Navbar.Link as={"div"} >
-              <Link to="/courses">Courses</Link>
+            <Navbar.Link as={"div"} className="mt-2">
+              <Link to="/courses" >Courses</Link>
             </Navbar.Link>
-            <Navbar.Link as={"div"}>
+            <Navbar.Link as={"div"} className="mt-2">
               <Link to="/mentors">Mentors</Link>
             </Navbar.Link>
-            <Navbar.Link as={"div"}>
+            <Navbar.Link as={"div"} className="mt-2">
               <Link to="/review">Reviews</Link>
             </Navbar.Link>
-            <Navbar.Link as={"div"}>
+            <Navbar.Link as={"div"} className="mt-2">
               <Link to="/faq">FAQ</Link>
             </Navbar.Link>
          
