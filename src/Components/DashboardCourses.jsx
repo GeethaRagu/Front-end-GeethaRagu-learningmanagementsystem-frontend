@@ -6,7 +6,7 @@ const DashboardCourses = () => {
   /**Redux state**/
   const currentuser = useSelector((state) => state.user.currentuser);
 
-  console.log(currentuser);
+  //console.log(currentuser);
   return (
     <div>
       <div className="min-h-screen mb-5">

@@ -6,6 +6,7 @@ import { Button, Card } from "flowbite-react";
 import { addToCart, removeFromCart } from "../Redux/Slice/cartSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { saveuser } from "../Redux/Slice/userSlice";
 const Courses = () => {
   /**React hooks**/
   const dispatch = useDispatch();
@@ -48,12 +49,14 @@ const Courses = () => {
       if (!isItemInCart) {
         item.coursequantity = 1;
         dispatch(addToCart(item));
+       
       } else {
         toast("Course already added to the Cart");
       }
     } else {
       item.coursequantity = 1;
       dispatch(addToCart(item));
+      
     }
   };
 

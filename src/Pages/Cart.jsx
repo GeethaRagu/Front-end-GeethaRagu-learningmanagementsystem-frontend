@@ -22,43 +22,43 @@ const Cart = () => {
   //console.log(cartItems);
 
   const proceedCheckOut = () => {
-    //alert("checkout");
     if (!currentuser) {
       toast("Sign in to proceed with checkout");
       navigate("/");
     } else {
-      // alert("checkout");
       makePayment();
     }
   };
   const apiurl = import.meta.env.VITE_API_URLKEY;
-  const makePayment = async () => {
-    //console.log(currentuser.rest._id);
-    //console.log(cartItems);
+  //console.log(currentuser);
+  const makePayment = () => {
     const itemarray = [];
     cartItems.forEach((e) => {
       const itemid = e._id;
-      // console.log(itemid);
-      //console.log(currentuser.rest.courses.length);
-
       const coursesofuser = currentuser.rest.courses;
       if (currentuser.rest.courses.length > 0) {
-        coursesofuser.forEach((ele) => {
-          //console.log(ele);
-          if (ele !== itemid) {
-            itemarray.push(itemid);
-          }
-        });
+        const isCourse = coursesofuser.find(
+          (cartItem) => cartItem._id === itemid
+        );
+        console.log(isCourse);
+        if (!isCourse) {
+          itemarray.push(itemid);
+          handlePayment(itemarray);
+        } else {
+          return toast.error("Course already added");
+        }
       } else {
         itemarray.push(itemid);
+        handlePayment(itemarray);
       }
     });
-    //console.log(itemarray);
+  };
+  const handlePayment = async (itemarray) => {
     const bodydata = {
       userId: currentuser.rest._id,
       courses: itemarray,
     };
-    //console.log(bodydata);
+    console.log(bodydata);
 
     try {
       const response = await fetch(`${apiurl}/course/addcourse`, {
@@ -69,14 +69,13 @@ const Cart = () => {
         body: JSON.stringify(bodydata),
       });
       const data = await response.json();
-      //console.log(data);
+
       if (response.ok) {
         dispatch(saveuser(data));
         toast(data.message);
       }
     } catch (error) {}
   };
-
   const removeItem = (item) => {
     //console.log(item);
     dispatch(removeFromCart({ item }));
@@ -144,7 +143,7 @@ const Cart = () => {
           </Button>
         </>
       ) : (
-        <span className = "text-white dark:text-white">Your cart is empty</span>
+        <span className="text-white dark:text-white">Your cart is empty</span>
       )}
     </div>
   );

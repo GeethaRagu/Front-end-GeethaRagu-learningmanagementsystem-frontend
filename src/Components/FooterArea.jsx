@@ -1,13 +1,6 @@
 import React from "react";
 import { Footer } from "flowbite-react";
-import {
-  BsDribbble,
-  BsFacebook,
-  BsGithub,
-  BsInstagram,
-  BsLinkedin,
-  BsTwitter,
-} from "react-icons/bs";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { Link } from "react-router-dom";
 const FooterArea = () => {
   return (
@@ -29,10 +22,10 @@ const FooterArea = () => {
             <div>
               <Footer.Title title="about" />
               <Footer.LinkGroup col>
-                <Footer.Link>
+                <Footer.Link as={"div"}>
                   <Link to="/courses">Courses</Link>
                 </Footer.Link>
-                <Footer.Link>
+                <Footer.Link as={"div"}>
                   <Link to="/mentors">Mentors</Link>
                 </Footer.Link>
               </Footer.LinkGroup>
@@ -40,7 +33,7 @@ const FooterArea = () => {
             <div>
               <Footer.Title title="Follow us" />
               <Footer.LinkGroup col>
-                <Footer.Link>
+                <Footer.Link as={"div"}>
                   <Link to="https://github.com/GeethaRagu/Front-end-GeethaRagu-learningmanagementsystem-frontend">
                     Github
                   </Link>
