@@ -26,7 +26,7 @@ const Mentors = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mb-5">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ml-5">
         {mentor &&
           mentor.map((ele, index) => {

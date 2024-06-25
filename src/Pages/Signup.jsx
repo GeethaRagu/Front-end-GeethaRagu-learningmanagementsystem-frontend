@@ -72,7 +72,7 @@ const Signup = () => {
     }
   };
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen mb-5">
       <div className="pt-5 px-5 flex max-w-full flex-col md:flex-row md:items-center gap-5">
         <div className=" flex-1 px-10 py-5 bg-amber-950  text-white border-amber-950 rounded-2xl">
           <h2 className=" text-4xl p-3 text-center">Sign Up</h2>

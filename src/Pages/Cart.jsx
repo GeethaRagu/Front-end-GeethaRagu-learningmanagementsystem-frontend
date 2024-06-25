@@ -83,7 +83,7 @@ const Cart = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen mb-5">
       {totalItems > 0 ? (
         <>
           <div className="flex justify-center items-center mt-10">
@@ -144,7 +144,7 @@ const Cart = () => {
           </Button>
         </>
       ) : (
-        <span>Your cart is empty</span>
+        <span className = "text-white dark:text-white">Your cart is empty</span>
       )}
     </div>
   );

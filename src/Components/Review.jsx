@@ -2,7 +2,7 @@ import React from "react";
 
 const Review = () => {
   return (
-    <div >
+    <div className="min-h-screen mb-5">
       <article>
         <div className="flex items-center mb-4 ">
           <img
