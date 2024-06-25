@@ -40,12 +40,13 @@ const Cart = () => {
         const isCourse = coursesofuser.find(
           (cartItem) => cartItem._id === itemid
         );
-        console.log(isCourse);
+        //console.log(isCourse);
         if (!isCourse) {
           itemarray.push(itemid);
           handlePayment(itemarray);
         } else {
-          return toast.error("Course already added");
+          //console.log(coursesofuser);
+          return toast.error(`Course ${e.coursename} already added`);
         }
       } else {
         itemarray.push(itemid);
