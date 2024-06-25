@@ -157,11 +157,11 @@ const Home = () => {
               Sign Up
             </Link>
           </div>
-          <div className="flex gap-2 text-sm mt-6">
+          {/* <div className="flex gap-2 text-sm mt-6">
             <Link to="/signup" className="text-amber-500">
               Forgot password ?
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
       <h3 className=" text-4xl font-medium tracking-tight text-white dark:text-white m-6">
