@@ -63,6 +63,7 @@ const FooterArea = () => {
             by="SussOut"
             year={new Date().getFullYear()}
           />
+          <div>**Website works in test mode and its not live</div>
           <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
             <Footer.Icon href="https://github.com/GeethaRagu" icon={BsGithub} />
             <Footer.Icon

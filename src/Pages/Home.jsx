@@ -164,6 +164,21 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <h3 className=" text-4xl font-medium tracking-tight text-white dark:text-white m-6">
+        About Suss Out
+      </h3>
+      <p className=" text-2xl font-medium tracking-tight text-white dark:text-white m-6">
+        Microlearning provides short bursts of focused learning content that’s
+        easy to consume in a matter of minutes. As the information is delivered
+        in bits, you can access it on various platforms and devices, including
+        mobile phones and tablets. This makes it convenient and accessible when
+        desired.
+      </p>
+      <p className=" text-2xl font-medium tracking-tight text-white dark:text-white m-6">
+        Its goal is to create a set of online tools that help educate students.
+        The organization produces short video lessons. Its website also includes
+        supplementary practice exercises and materials for educators.
+      </p>
       <h3 className=" text-4xl text-center font-medium tracking-tight text-white dark:text-white m-6">
         LATEST COURSES
       </h3>
