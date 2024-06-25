@@ -83,7 +83,7 @@ const Home = () => {
   return (
     <div className="min-h-screen mb-5">
       <div className="pt-5 px-5 flex max-w-full flex-col md:flex-row md:items-center gap-5">
-        <div className=" flex flex-row px-10 py-5 bg-amber-950  text-white border-amber-950 rounded-2xl banner_container">
+        <div className=" flex flex-col sm:flex-row px-10 py-5 bg-amber-950  text-white border-amber-950 rounded-2xl banner_container ">
           <div>
             <span className="text-amber-500 text-8xl font-bold">
               <br />

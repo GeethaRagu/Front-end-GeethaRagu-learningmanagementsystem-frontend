@@ -21,7 +21,6 @@ const Header = () => {
   /**State for cart count**/
   const totalItems = useSelector((state) => state.cart.totalItems);
 
-
   /**React hooks**/
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -44,83 +43,81 @@ const Header = () => {
           </span>
           Out!
         </Link>
+        <Navbar.Toggle/>
 
-        <div className="flex md:order-2">
-          <Button
-            className="w-12 h-10 mr-2 hidden sm:inline bg-gradient-to-r from-amber-950 via-amber-800 to bg-amber-500"
-            onClick={() => dispatch(toggleTheme())}
-          >
-             {theme === "light" ? (
-            <FaMoon />
-          ) :(
-            <FaSun />
-          )}
-          </Button>
-        
-          <Button className="w-20 h-10 mr-2 hidden sm:inline bg-gradient-to-r from-amber-950 via-amber-800 to bg-amber-500 bordered text-white">
-            <Link to="/cart">
-              Cart
-              <span className=" bg-white bordered pill rounded-full text-black ml-1 p-1">
-                &nbsp;{totalItems}
-              </span>
-            </Link>
-          </Button>
-          
-          {currentuser ? (
-            <Dropdown
-              arrowIcon={false}
-              inline
-              label={
-                <Avatar
-                  alt="user"
-                  img={currentuser.rest.profilePicture}
-                  rounded
-                />
-              }
-            >
-              <Dropdown.Header>
-                <span className=" font-bold">Hi </span>
-                <span className="text-sm">{currentuser.rest.username}</span>
-              </Dropdown.Header>
-
-              {currentuser.rest.isAdmin ? (
-                <>
-                  <Link to="/dashboard?tab=createcourse">
-                    <Dropdown.Item>Dashboard</Dropdown.Item>
-                  </Link>
-                </>
-              ) : (
-                <>
-                  <Link to="/dashboard?tab=mycourses">
-                    <Dropdown.Item>Dashboard</Dropdown.Item>
-                  </Link>
-                </>
-              )}
-              <DropdownDivider />
-              <Dropdown.Item onClick={handleSignout}>Sign Out</Dropdown.Item>
-            </Dropdown>
-          ) : (
-            <Link to="/signup">
-              <Button className="bg-gradient-to-r from-amber-950 via-amber-800 to bg-amber-500">
-                SignUp
-              </Button>
-            </Link>
-          )}
-          <Navbar.Toggle />
-        </div>
         <Navbar.Collapse>
-          <Navbar.Link as={"div"}>
-            <Link to="/courses">Courses</Link>
-          </Navbar.Link>
-          <Navbar.Link  as={"div"}>
-            <Link to="/mentors">Mentors</Link>
-          </Navbar.Link>
-          <Navbar.Link as={"div"}>
-          <Link to="/review">Reviews</Link>
-          </Navbar.Link>
-          <Navbar.Link as={"div"}>
-          <Link to="/faq">FAQ</Link>
-          </Navbar.Link>
+          <div className="flex md:order-2">
+            <Button
+              className="w-12 h-10 ml-5 mr-2 bg-gradient-to-r from-amber-950 via-amber-800 to bg-amber-500"
+              onClick={() => dispatch(toggleTheme())}
+            >
+              {theme === "light" ? <FaMoon /> : <FaSun />}
+            </Button>
+
+            <Button className="w-20 h-10 mr-2 bg-gradient-to-r from-amber-950 via-amber-800 to bg-amber-500 bordered text-white">
+              <Link to="/cart">
+                Cart
+                <span className=" bg-white bordered pill rounded-full text-black ml-1 p-1">
+                  &nbsp;{totalItems}
+                </span>
+              </Link>
+            </Button>
+
+            {currentuser ? (
+              <Dropdown
+                arrowIcon={false}
+                inline
+                label={
+                  <Avatar
+                    alt="user"
+                    img={currentuser.rest.profilePicture}
+                    rounded
+                  />
+                }
+              >
+                <Dropdown.Header>
+                  <span className=" font-bold">Hi </span>
+                  <span className="text-sm">{currentuser.rest.username}</span>
+                </Dropdown.Header>
+
+                {currentuser.rest.isAdmin ? (
+                  <>
+                    <Link to="/dashboard?tab=createcourse">
+                      <Dropdown.Item>Dashboard</Dropdown.Item>
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/dashboard?tab=mycourses">
+                      <Dropdown.Item>Dashboard</Dropdown.Item>
+                    </Link>
+                  </>
+                )}
+                <DropdownDivider />
+                <Dropdown.Item onClick={handleSignout}>Sign Out</Dropdown.Item>
+              </Dropdown>
+            ) : (
+              <Link to="/signup">
+                <Button className="bg-gradient-to-r from-amber-950 via-amber-800 to bg-amber-500">
+                  SignUp
+                </Button>
+              </Link>
+            )}
+          </div>
+      
+            <Navbar.Link as={"div"} >
+              <Link to="/courses">Courses</Link>
+            </Navbar.Link>
+            <Navbar.Link as={"div"}>
+              <Link to="/mentors">Mentors</Link>
+            </Navbar.Link>
+            <Navbar.Link as={"div"}>
+              <Link to="/review">Reviews</Link>
+            </Navbar.Link>
+            <Navbar.Link as={"div"}>
+              <Link to="/faq">FAQ</Link>
+            </Navbar.Link>
+         
         </Navbar.Collapse>
       </Navbar>
     </div>
