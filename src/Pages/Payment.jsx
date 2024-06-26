@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import CheckOutForm from "../Components/CheckOutForm";
 import { useSelector } from "react-redux";
 
-const stripePromise = loadStripe(import.meta.env.VITE_PUBLISHABLE_KEY);
+const stripePromise = loadStripe("pk_test_51PUAAe04drKBJ3c6sprMPnbGWN8va0iqaqCBv6nSf2UM7qWFV74V2aVFdfoWNAQyhW5WhCJ6SoozSk6IcxK2rQNa00PEfVh03H");
 
 const Payment = () => {
   /**state from redux**/
