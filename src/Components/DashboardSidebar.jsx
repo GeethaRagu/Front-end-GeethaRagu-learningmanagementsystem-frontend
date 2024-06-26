@@ -68,7 +68,7 @@ const DashboardSidebar = () => {
             </>
           ) : (
             <>
-              <Link to="/dashboard?tab=mycourses">
+              {/* <Link to="/dashboard?tab=mycourses">
                 <Sidebar.Item
                   active={tab === "mycourses"}
                   labelColor="dark"
@@ -76,7 +76,7 @@ const DashboardSidebar = () => {
                 >
                   My Courses
                 </Sidebar.Item>
-              </Link>
+              </Link> */}
               <Link to="/dashboard?tab=myperformance">
                 <Sidebar.Item
                   active={tab === "myperformance"}
