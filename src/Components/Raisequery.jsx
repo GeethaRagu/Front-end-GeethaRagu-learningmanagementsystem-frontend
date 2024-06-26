@@ -39,7 +39,7 @@ const Raisequery = () => {
         //console.log(data);
         
         if (response.ok) {
-          toast.success("Query posted successfully.")
+          toast.success("Query posted successfully.Will get notification soon")
           navigate("/");
         }
       } catch (error) {
