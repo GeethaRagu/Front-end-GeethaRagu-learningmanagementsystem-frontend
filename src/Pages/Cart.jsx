@@ -59,8 +59,8 @@ const Cart = () => {
       userId: currentuser.rest._id,
       courses: itemarray,
     };
-    console.log(bodydata);
-
+   //console.log(bodydata);
+    //console.log(cartItems);
     try {
       const response = await fetch(`${apiurl}/course/addcourse`, {
         method: "POST",
@@ -70,10 +70,10 @@ const Cart = () => {
         body: JSON.stringify(bodydata),
       });
       const data = await response.json();
-
+      //console.log(data.rest);
       if (response.ok) {
         dispatch(saveuser(data));
-        toast(data.message);
+        navigate('/payment');
       }
     } catch (error) {}
   };

@@ -12,6 +12,8 @@ import Dashboard from "./Pages/Dashboard";
 import FooterArea from "./Components/FooterArea";
 import Frequentlyasked from "./Pages/Frequentlyasked";
 import Reviews from "./Pages/Reviews";
+import Payment from "./Pages/Payment";
+import PaymentSuccess from "./Pages/PaymentSuccess";
 
 
 const App = () => {
@@ -34,6 +36,8 @@ const App = () => {
             </Route>
             <Route path="/faq" element={<Frequentlyasked/>}></Route>
             <Route path="/review" element={<Reviews/>}></Route>
+            <Route path="/payment" element={<Payment/>}/>
+            <Route path="/success" element={<PaymentSuccess/>}/>
           </Routes>
           <FooterArea />
         </BrowserRouter>
