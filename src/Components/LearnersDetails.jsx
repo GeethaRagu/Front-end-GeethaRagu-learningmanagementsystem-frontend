@@ -67,7 +67,7 @@ const LearnersDetails = () => {
       const data = await response.json();
       //console.log(data);
       if (response.ok) {
-        dispatch(saveuser(data));
+        //dispatch(saveuser(data));
         navigate("/");
       }
     } catch (error) {
