@@ -6,9 +6,11 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { displayMentors } from "../Redux/Slice/courseSlice";
 import { saveuser, viewStudents } from "../Redux/Slice/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const LearnersDetails = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   /**Redux state**/
   const { loading } = useSelector((state) => state.user);
   const students = useSelector((state) => state.user.students);
@@ -66,7 +68,7 @@ const LearnersDetails = () => {
       //console.log(data);
       if (response.ok) {
         dispatch(saveuser(data));
-        Navigate("/");
+        navigate("/");
       }
     } catch (error) {
       console.log(error);
