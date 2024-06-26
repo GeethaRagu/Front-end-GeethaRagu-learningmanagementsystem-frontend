@@ -88,7 +88,7 @@ const Header = () => {
                   </>
                 ) : (
                   <>
-                    <Link to="/dashboard?tab=mycourses">
+                    <Link to="/dashboard?tab=myperformance">
                       <Dropdown.Item>Dashboard</Dropdown.Item>
                     </Link>
                   </>
