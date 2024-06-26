@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 const ViewPerformance = () => {
   /**state from redux**/
   const currentuser = useSelector((state) => state.user.currentuser);
-  console.log(currentuser);
+  //console.log(currentuser);
   return (
     <div className="mx-10">
       <div className="text-white dark:text-black">
