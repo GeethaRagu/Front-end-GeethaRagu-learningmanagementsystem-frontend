@@ -14,6 +14,8 @@ import Frequentlyasked from "./Pages/Frequentlyasked";
 import Reviews from "./Pages/Reviews";
 import Payment from "./Pages/Payment";
 import PaymentSuccess from "./Pages/PaymentSuccess";
+import Forgotpassword from "./Pages/Forgotpassword";
+import Resetpassword from "./Pages/Resetpassword";
 
 
 const App = () => {
@@ -38,6 +40,8 @@ const App = () => {
             <Route path="/review" element={<Reviews/>}></Route>
             <Route path="/payment" element={<Payment/>}/>
             <Route path="/success" element={<PaymentSuccess/>}/>
+            <Route path="/forgotpassword" element={<Forgotpassword/>}/>
+            <Route path="/resetpassword" element={<Resetpassword/>}/>
           </Routes>
           <FooterArea />
         </BrowserRouter>
