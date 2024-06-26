@@ -54,7 +54,7 @@ const Resetpassword = () => {
     <div className="min-h-screen mb-5">
       <div className="pt-5 px-5 flex max-w-full flex-col md:flex-row md:items-center gap-5">
         <div className=" flex-1 px-10 py-5 bg-amber-950  text-white border-amber-950 rounded-2xl">
-          <h2 className=" text-4xl p-3 text-center">Sign Up</h2>
+          <h2 className=" text-4xl p-3 text-center">Reset password</h2>
           <Formik
             initialValues={initialValues}
             validationSchema={validationschema}
@@ -67,7 +67,7 @@ const Resetpassword = () => {
                   type="email"
                   name="email"
                   placeholder="name@gmail.com"
-                  className="w-20 sm:w-full"
+                  className="w-40"
                 />
                 <ErrorMessage
                   name="email"
@@ -77,7 +77,7 @@ const Resetpassword = () => {
               </div>
               <div className="mt-5">
                 <label className="pr-3">Password :</label>
-                <Field type="password" name="password" placeholder="*******" className="w-20 sm:w-full"/>
+                <Field type="password" name="password" placeholder="*******" className="w-40"/>
                 <ErrorMessage
                   name="password"
                   component="h6"
