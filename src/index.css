@@ -12,11 +12,12 @@ body{
         min-height:27rem;
     } 
 } */
-.banner_container{
+/* .banner_container{
     min-height:27rem;
-} 
+}  */
 .banner_image{
     border-radius: 10px 100px / 120px;
+    height:25rem;
 }
 /*input box css*/
 form input{

@@ -16,6 +16,11 @@ import Payment from "./Pages/Payment";
 import PaymentSuccess from "./Pages/PaymentSuccess";
 import Forgotpassword from "./Pages/Forgotpassword";
 import Resetpassword from "./Pages/Resetpassword";
+import CreateCourse from "./Components/CreateCourse";
+import CreateMentor from "./Components/CreateMentor";
+import OnlyAdminPrivateRoute from "./Components/OnlyAdminPrivateRoute";
+import ViewStudents from "./Components/ViewStudents";
+import LearnersDetails from "./Components/LearnersDetails";
 
 
 const App = () => {
@@ -36,6 +41,12 @@ const App = () => {
             <Route element={<PrivateRoute />}>
               <Route path="/dashboard" element={<Dashboard />} />
             </Route>
+            {/* <Route element={<OnlyAdminPrivateRoute />}>
+              <Route path="/createcourse" element={<CreateCourse />} />
+              <Route path="/creatementor" element={<CreateMentor />} />
+              <Route path="/students" element={<ViewStudents />} />
+              <Route path="/learnersdetails" element={<LearnersDetails />} />
+            </Route> */}
             <Route path="/faq" element={<Frequentlyasked/>}></Route>
             <Route path="/review" element={<Reviews/>}></Route>
             <Route path="/payment" element={<Payment/>}/>

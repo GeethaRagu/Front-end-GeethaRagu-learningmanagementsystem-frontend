@@ -10,6 +10,7 @@ import ViewStudents from "../Components/ViewStudents";
 import LearnersDetails from "../Components/LearnersDetails";
 import ViewPerformance from "../Components/ViewPerformance";
 import Raisequery from "../Components/Raisequery";
+import OnlyAdminPrivateRoute from "../Components/OnlyAdminPrivateRoute";
 
 const Dashboard = () => {
   const location = useLocation();
@@ -28,12 +29,13 @@ const Dashboard = () => {
       </div>
       {tab === "mycourses" && <DashboardCourses />}
       {tab === "quiz" && <Quiz />}
+      {tab === "myperformance" && <ViewPerformance />}
+      {tab === "query" && <Raisequery />}
+
       {tab === "createcourse" && <CreateCourse />}
       {tab === "mentor" && <CreateMentor />}
       {tab === "students" && <ViewStudents />}
       {tab === "learnersdetails" && <LearnersDetails />}
-      {tab === "myperformance" && <ViewPerformance />}
-      {tab === "query" && <Raisequery />}
     </div>
   );
 };
