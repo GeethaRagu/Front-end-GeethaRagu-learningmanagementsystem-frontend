@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const initialState = {
     currentuser: null,
     error: null,
@@ -43,6 +44,7 @@ const userSlice = createSlice({
             state.error = action.payload;
             state.currentuser = null;
             toast.error(action.payload);
+          
         },
         signOutSuccess: (state) => {
             state.currentuser = null;

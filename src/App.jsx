@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import Header from "./Components/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
@@ -21,7 +21,8 @@ import CreateMentor from "./Components/CreateMentor";
 import OnlyAdminPrivateRoute from "./Components/OnlyAdminPrivateRoute";
 import ViewStudents from "./Components/ViewStudents";
 import LearnersDetails from "./Components/LearnersDetails";
-
+import PageNotFound from "./Pages/PageNotFound";
+import APIError from "./Components/APIError";
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
       <div>
         <BrowserRouter>
           <Header />
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="courses" element={<Courses />} />
@@ -41,18 +43,14 @@ const App = () => {
             <Route element={<PrivateRoute />}>
               <Route path="/dashboard" element={<Dashboard />} />
             </Route>
-            {/* <Route element={<OnlyAdminPrivateRoute />}>
-              <Route path="/createcourse" element={<CreateCourse />} />
-              <Route path="/creatementor" element={<CreateMentor />} />
-              <Route path="/students" element={<ViewStudents />} />
-              <Route path="/learnersdetails" element={<LearnersDetails />} />
-            </Route> */}
-            <Route path="/faq" element={<Frequentlyasked/>}></Route>
-            <Route path="/review" element={<Reviews/>}></Route>
-            <Route path="/payment" element={<Payment/>}/>
-            <Route path="/success" element={<PaymentSuccess/>}/>
-            <Route path="/forgotpassword" element={<Forgotpassword/>}/>
-            <Route path="/resetpassword" element={<Resetpassword/>}/>
+            <Route path="/faq" element={<Frequentlyasked />}></Route>
+
+            <Route path="/review" element={<Reviews />}></Route>
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/success" element={<PaymentSuccess />} />
+            <Route path="/forgotpassword" element={<Forgotpassword />} />
+            <Route path="/resetpassword" element={<Resetpassword />} />
+            <Route path="*" element={<PageNotFound />} />
           </Routes>
           <FooterArea />
         </BrowserRouter>

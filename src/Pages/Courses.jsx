@@ -7,6 +7,7 @@ import { addToCart, removeFromCart } from "../Redux/Slice/cartSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { saveuser } from "../Redux/Slice/userSlice";
+import APIError from "../Components/APIError";
 const Courses = () => {
   /**React hooks**/
   const dispatch = useDispatch();
@@ -27,7 +28,12 @@ const Courses = () => {
         dispatch(displayCourse(res.data));
         //console.log("res", res.data);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        <APIError message = {error} />
+        }
+      );
+
   };
 
   const AddtoCart = (id, name, category, description, price, quantity) => {
@@ -65,12 +71,12 @@ const Courses = () => {
 
   return (
     <div className="min-h-screen mb-5">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ml-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ml-5 justify-start">
         {course &&
           course.map((ele, index) => {
             return (
               <Card key={index} className="max-w-sm">
-                <h5 className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                <h5 className=" mt- 0 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">
                   {ele.coursename} [{ele.coursecategory}]
                 </h5>
                 <h6 className=" text-xl font-medium tracking-tight text-gray-900 dark:text-white">
