@@ -37,3 +37,10 @@ form input::placeholder{
 
 }
 
+.correctoption{
+  background: lightgreen;
+}
+.wrongoption{
+    background: pink;
+
+}

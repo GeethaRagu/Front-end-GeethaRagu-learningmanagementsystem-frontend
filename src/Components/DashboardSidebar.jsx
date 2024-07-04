@@ -94,7 +94,7 @@ const DashboardSidebar = () => {
                 >
                   My Assignments
                 </Sidebar.Item>
-              </Link >
+              </Link >*/}
               <Link to="/dashboard?tab=quiz">
                 <Sidebar.Item
                   active={tab === "quiz"}
@@ -103,7 +103,7 @@ const DashboardSidebar = () => {
                 >
                   Quiz
                 </Sidebar.Item>
-              </Link> */}
+              </Link> 
 
               <Link to="/dashboard?tab=query">
                 <Sidebar.Item

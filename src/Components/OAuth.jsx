@@ -15,6 +15,7 @@ const OAuth = () => {
   const navigate = useNavigate();
   
   const { totalItems } = useSelector((state) => state.cart);
+  const error = useSelector((state)=>state.user.error);
   const apiurl = import.meta.env.VITE_API_URLKEY;
   const handleSubmit = async () => {
     const provider = new GoogleAuthProvider();

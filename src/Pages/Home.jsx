@@ -20,8 +20,9 @@ const Home = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  /**State for loading **/
+  /**Redux State  **/
   const { loading } = useSelector((state) => state.user);
+  const { error } = useSelector((state) => state.user);
   const { totalItems } = useSelector((state) => state.cart);
   const course = useSelector((state) => state.course.courses);
   const currentuser = useSelector((state) => state.user.currentuser);
@@ -96,11 +97,11 @@ const Home = () => {
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSATZZeCBzf_eLW82hI6HjAHjfKn_zELdoELQ&s"
             alt=""
           />
-          <div className="">
+          <div className=""><br/>
             <span className="text-amber-500 text-8xl font-bold px-3 pb-5">
               Suss Out !
             </span>
-
+            <br/><br/><br/><br/><br/>
             <p className=" text-2xl pt-8 px-3 text-white">
               Tell me and I forgot.Teach me and I remember.
               <p className=" text-2xl px-3 text-white">
@@ -110,6 +111,7 @@ const Home = () => {
             <p className="text-lg pt-8 px-3 text-white">-Benjamin Franklin</p>
           </div>
         </div>
+        
         {!currentuser ? (
           <>
             <div className=" flex-1 pt-5 px-10 py-5 bg-amber-950  text-white border-amber-950 rounded-2xl">
@@ -201,7 +203,7 @@ const Home = () => {
         About Suss Out
       </h3>
       <p className=" text-lg font-medium tracking-tight text-white dark:text-white m-6">
-        Microlearning provides short bursts of focused learning content that’s
+        Suss Out provides short bursts of focused learning content that’s
         easy to consume in a matter of minutes. As the information is delivered
         in bits, you can access it on various platforms and devices, including
         mobile phones and tablets. This makes it convenient and accessible when
