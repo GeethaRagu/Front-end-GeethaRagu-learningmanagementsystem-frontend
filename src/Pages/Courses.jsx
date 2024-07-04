@@ -7,7 +7,7 @@ import { addToCart, removeFromCart } from "../Redux/Slice/cartSlice";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { saveuser } from "../Redux/Slice/userSlice";
-import APIError from "../Components/APIError";
+
 const Courses = () => {
   /**React hooks**/
   const dispatch = useDispatch();
@@ -30,7 +30,7 @@ const Courses = () => {
       })
       .catch((error) => {
         console.log(error);
-        <APIError message = {error} />
+      
         }
       );
 

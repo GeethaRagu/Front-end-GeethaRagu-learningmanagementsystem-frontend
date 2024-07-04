@@ -13,7 +13,7 @@ import * as Yup from "yup";
 import Courses from "./Courses";
 import axios from "axios";
 import { displayCourse } from "../Redux/Slice/courseSlice";
-import APIError from "../Components/APIError";
+
 
 const Home = () => {
   /**React Hooks */

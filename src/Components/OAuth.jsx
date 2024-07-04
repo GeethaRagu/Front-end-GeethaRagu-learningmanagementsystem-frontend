@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { app } from "../firebase";
 import { signInFailure, signInSuccess } from "../Redux/Slice/userSlice";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
-import APIError from "./APIError";
+
 const OAuth = () => {
   const auth = getAuth(app);
   

@@ -16,13 +16,8 @@ import Payment from "./Pages/Payment";
 import PaymentSuccess from "./Pages/PaymentSuccess";
 import Forgotpassword from "./Pages/Forgotpassword";
 import Resetpassword from "./Pages/Resetpassword";
-import CreateCourse from "./Components/CreateCourse";
-import CreateMentor from "./Components/CreateMentor";
-import OnlyAdminPrivateRoute from "./Components/OnlyAdminPrivateRoute";
-import ViewStudents from "./Components/ViewStudents";
-import LearnersDetails from "./Components/LearnersDetails";
 import PageNotFound from "./Pages/PageNotFound";
-import APIError from "./Components/APIError";
+
 
 const App = () => {
   return (
